@@ -28,13 +28,16 @@ var AccordionItemTitle = (function (_Component) {
       color: this.props.titleColor
     };
 
-    return _react2['default'].createElement('h3', { 'aria-controls': 'react-sanfona-item-body-' + this.props.uuid,
-      className: 'react-sanfona-item-title',
-      id: 'react-safona-item-title-' + this.props.uuid,
-      onClick: this.props.onClick,
-      style: style,
-      dangerouslySetInnerHTML: { __html: this.props.title }
-    });
+    return _react2['default'].createElement(
+      'h3',
+      { 'aria-controls': 'react-sanfona-item-body-' + this.props.uuid,
+        className: 'react-sanfona-item-title',
+        id: 'react-safona-item-title-' + this.props.uuid,
+        onClick: this.props.onClick,
+        style: style
+      },
+      this.props.children
+    );
   };
 
   return AccordionItemTitle;
@@ -44,7 +47,6 @@ exports['default'] = AccordionItemTitle;
 
 AccordionItemTitle.propTypes = {
   onClick: _react.PropTypes.func,
-  title: _react.PropTypes.string,
   uuid: _react.PropTypes.string
 };
 module.exports = exports['default'];
