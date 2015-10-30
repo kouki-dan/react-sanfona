@@ -94,15 +94,16 @@ export default class AccordionItem extends Component {
     return (
       <div {...this.getProps()} ref="item">
         <AccordionItemTitle
-          title={this.props.title}
           onClick={this.props.onClick}
           titleColor= {this.props.titleColor}
-          uuid={this.uuid} />
+          uuid={this.uuid}>
+          {this.props.children[0]}
+        </AccordionItemTitle>
         <AccordionItemBody maxHeight={this.state.maxHeight}
           overflow={this.state.overflow}
           ref="body"
           uuid={this.uuid}>
-          {this.props.children}
+          {this.props.children[1]}
         </AccordionItemBody>
       </div>
     );

@@ -16,8 +16,9 @@ export default class AccordionItemTitle extends Component {
         className="react-sanfona-item-title"
         id={`react-safona-item-title-${ this.props.uuid }`}
         onClick={this.props.onClick}
-        style={style}>
-        {this.props.title}
+        style={style}
+        >
+        {this.props.children}
       </h3>
     )
   }
@@ -26,6 +27,5 @@ export default class AccordionItemTitle extends Component {
 
 AccordionItemTitle.propTypes = {
   onClick: PropTypes.func,
-  title: PropTypes.string,
   uuid: PropTypes.string
 };

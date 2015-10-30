@@ -6,13 +6,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
 var Accordion = (function (_Component) {
+  _inherits(Accordion, _Component);
+
   function Accordion(props) {
     _classCallCheck(this, Accordion);
 
@@ -28,8 +34,6 @@ var Accordion = (function (_Component) {
     this.state = state;
   }
 
-  _inherits(Accordion, _Component);
-
   Accordion.prototype.componentDidMount = function componentDidMount() {
     var _this = this;
 
@@ -39,7 +43,7 @@ var Accordion = (function (_Component) {
 
     // allow overflow for absolute positioned elements inside
     // the item body, but only after animation is complete
-    _react2['default'].findDOMNode(this).addEventListener('transitionend', function () {
+    _reactDom2['default'].findDOMNode(this).addEventListener('transitionend', function () {
       if (_this.state.selectedIndex !== -1) {
         _this.refs['item-' + _this.state.selectedIndex].allowOverflow();
       }
