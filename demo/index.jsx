@@ -23,7 +23,7 @@ class Demo extends React.Component {
             return (
               <AccordionItem title={`Item ${ item }aa`} key={item}>
                 <div>
-                  title <span>aaa</span>
+                  title <span style={{color: "red"}}>aaa</span>
                 </div>
                 <div>
                   {`Item ${ item } content`}
@@ -39,7 +39,10 @@ class Demo extends React.Component {
         <Accordion allowMultiple={true} selectedIndex={2}>
           {[1, 2, 3, 4, 5].map((item) => {
             return (
-              <AccordionItem title={`Item ${ item }`} key={item}>
+              <AccordionItem key={item}>
+                <div>
+                  Item ${ item }
+                </div>
                 <div>
                   {`Item ${ item } content`}
                   {item === 3 ? <p><img src="http://i.giphy.com/nIMpbXH2WfYRi.gif" /></p> : null}
@@ -55,6 +58,9 @@ class Demo extends React.Component {
           {[1, 2].map((item) => {
             return (
               <AccordionItem title={`Item ${ item }`} key={item}>
+                <div>
+                  Item ${ item }
+                </div>
                 <div>
                   {`Item ${ item } content`}
                   <div className="tooltip">{`Tooltip ${ item } content`}</div>
